@@ -17,7 +17,7 @@ public final class MAMPParser {
     private MAMPParser() {
     }
 
-    public static Object parse(MAMP<? extends BaseDTO<Long>> request) {
+    public static Object parse(MAMP<? extends BaseDTO> request) {
         return switch (request.getCommand()) {
             case CREATE -> createRequestParser(request);
             case RETRIEVE -> retrieveRequestParser(request);
@@ -26,7 +26,7 @@ public final class MAMPParser {
         };
     }
 
-    private static String deleteRequestParser(MAMP<? extends BaseDTO<Long>> request) {
+    private static String deleteRequestParser(MAMP<? extends BaseDTO> request) {
         if (request.getDtoClass().equals(AccountDTO.class)) {
 
             if (accountService.deleteExistActiveAccount((AccountDTO) request.getData())) {
@@ -48,7 +48,7 @@ public final class MAMPParser {
         }
     }
 
-    private static String updateRequestParser(MAMP<? extends BaseDTO<Long>> request) {
+    private static String updateRequestParser(MAMP<? extends BaseDTO> request) {
         if (request.getDtoClass().equals(AccountDTO.class)) {
 
             if (accountService.updateExistActiveAccount((AccountDTO) request.getData())) {
@@ -70,7 +70,7 @@ public final class MAMPParser {
         }
     }
 
-    private static Object retrieveRequestParser(MAMP<? extends BaseDTO<Long>> request) {
+    private static Object retrieveRequestParser(MAMP<? extends BaseDTO> request) {
 
         if (request.getDtoClass().equals(AccountDTO.class)) {
 
@@ -99,7 +99,7 @@ public final class MAMPParser {
         }
     }
 
-    private static String createRequestParser(MAMP<? extends BaseDTO<Long>> request) {
+    private static String createRequestParser(MAMP<? extends BaseDTO> request) {
         if (request.getDtoClass().equals(AccountDTO.class)) {
 
             if (accountService.createNewAccount((AccountDTO) request.getData())) {

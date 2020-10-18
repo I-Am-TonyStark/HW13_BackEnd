@@ -91,7 +91,7 @@ public final class ServerManager {
                     if(!connected){
                         break;
                     }
-                    buffer = Optional.of(MAMPParser.parse((MAMP<? extends BaseDTO<Long>>) inputObject.readObject()));
+                    buffer = Optional.of(MAMPParser.parse((MAMP<? extends BaseDTO>) inputObject.readObject()));
                     occupiedBuffer = true;
                     canTalk.signalAll();
                 } catch (IOException | ClassNotFoundException | InterruptedException e) {

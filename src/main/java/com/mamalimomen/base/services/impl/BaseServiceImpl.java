@@ -8,7 +8,7 @@ import com.mamalimomen.base.dtos.BaseDTO;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class BaseServiceImpl<PK extends Long, E extends BaseEntity, D extends BaseDTO<Long>, REP extends BaseRepository<PK, E, D>> implements BaseService<PK, E, D> {
+public abstract class BaseServiceImpl<PK extends Long, E extends BaseEntity, D extends BaseDTO, REP extends BaseRepository<PK, E, D>> implements BaseService<PK, E, D> {
     protected final REP repository;
 
     public BaseServiceImpl(REP repository) {

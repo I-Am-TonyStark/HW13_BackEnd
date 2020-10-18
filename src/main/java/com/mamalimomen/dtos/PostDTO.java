@@ -5,7 +5,7 @@ import com.mamalimomen.base.dtos.BaseDTO;
 
 import java.util.Date;
 
-public final class PostDTO extends BaseDTO<Long> implements Comparable<PostDTO> {
+public final class PostDTO extends BaseDTO implements Comparable<PostDTO> {
 
     private static final long serialVersionUID = 3156033230431579881L;
 

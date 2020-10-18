@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class BaseRepositoryImpl<PK extends Long, E extends BaseEntity, D extends BaseDTO<Long>> implements BaseRepository<PK, E, D> {
+public abstract class BaseRepositoryImpl<PK extends Long, E extends BaseEntity, D extends BaseDTO> implements BaseRepository<PK, E, D> {
     private final EntityManager em;
 
     public BaseRepositoryImpl(EntityManager em) {

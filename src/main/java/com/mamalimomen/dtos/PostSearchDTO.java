@@ -4,7 +4,7 @@ import com.mamalimomen.base.dtos.BaseDTO;
 
 import java.util.Date;
 
-public class PostSearchDTO extends BaseDTO<Long> {
+public class PostSearchDTO extends BaseDTO {
 
     private static final long serialVersionUID = 1033764190288685994L;
 

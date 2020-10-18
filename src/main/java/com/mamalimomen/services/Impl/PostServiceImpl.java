@@ -1,6 +1,7 @@
 package com.mamalimomen.services.Impl;
 
 import com.mamalimomen.base.services.impl.BaseServiceImpl;
+import com.mamalimomen.domains.Account;
 import com.mamalimomen.domains.Post;
 import com.mamalimomen.dtos.PostDTO;
 import com.mamalimomen.dtos.PostSearchDTO;
@@ -38,16 +39,14 @@ public class PostServiceImpl extends BaseServiceImpl<Long, Post, PostSearchDTO, 
 
     @Override
     public boolean updateExistPost(PostDTO dto) {
-        Post post = new Post();
-        post.setId(dto.getId());
+        Post post  = findOneById(Post.class,dto.getId()).get();
 
         return updateOne(post.copyMeFrom(dto));
     }
 
     @Override
     public boolean deleteExistPost(PostDTO dto) {
-        Post post = new Post();
-        post.setId(dto.getId());
+        Post post = findOneById(Post.class,dto.getId()).get();
 
         return deleteOne(post);
     }

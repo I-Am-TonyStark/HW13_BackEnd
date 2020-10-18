@@ -77,7 +77,7 @@ public final class UserDTO implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("%s&n%s%n%s%n", getUsername(), getFullName(), getAboutMe());
+        return String.format("%s%n%s%n%s%n", getUsername(), getFullName(), getAboutMe());
     }
 
     @Override

@@ -6,7 +6,7 @@ import com.mamalimomen.base.dtos.BaseDTO;
 import java.util.List;
 import java.util.Optional;
 
-public interface BaseRepository<PK extends Long, E extends BaseEntity, D extends BaseDTO<Long>> {
+public interface BaseRepository<PK extends Long, E extends BaseEntity, D extends BaseDTO> {
     void closeEntityManger();
 
     boolean saveOne(E e);

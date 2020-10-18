@@ -51,9 +51,8 @@ public class AccountServiceImpl extends BaseServiceImpl<Long, Account, AccountSe
         User user = new User();
         user.copyMeFrom(dto.getUser());
 
-        Account account = new Account();
+        Account account = findOneById(Account.class,dto.getId()).get();
         //System.out.println(account.getId() + "" + account);
-        account.setId(dto.getId());
         account.setUser(user);
         //System.out.println(account.getId() + "" + account);
 
@@ -62,10 +61,10 @@ public class AccountServiceImpl extends BaseServiceImpl<Long, Account, AccountSe
 
     @Override
     public boolean deleteExistActiveAccount(AccountDTO dto) {
-        Account account = new Account();
-        account.setId(dto.getId());
+        Account account = findOneById(Account.class,dto.getId()).get();
+        account.setDeleted(true);
 
-        return deleteOne(account);
+        return updateOne(account);
     }
 
     @Override

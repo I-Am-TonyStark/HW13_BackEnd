@@ -2,7 +2,7 @@ package com.mamalimomen.dtos;
 
 import com.mamalimomen.base.dtos.BaseDTO;
 
-public final class AccountDTO extends BaseDTO<Long> implements Comparable<AccountDTO> {
+public final class AccountDTO extends BaseDTO implements Comparable<AccountDTO> {
 
     private static final long serialVersionUID = -1541995039780498705L;
 

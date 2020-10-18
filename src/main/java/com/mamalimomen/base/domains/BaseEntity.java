@@ -10,7 +10,7 @@ public abstract class BaseEntity implements Serializable {
     private static final long serialVersionUID = -4281565028591599756L;
 
     @Transient
-    private static Long count = 1L;
+    private static Long count = 20L;
 
     @Id
     @Column(name = "id", updatable = false, nullable = false, unique = true)

@@ -4,7 +4,7 @@ import com.mamalimomen.base.dtos.BaseDTO;
 
 import java.io.Serializable;
 
-public final class MAMP<D extends BaseDTO<Long>> implements Serializable {
+public final class MAMP<D extends BaseDTO> implements Serializable {
 
     private static final long serialVersionUID = -2846415079417991038L;
 

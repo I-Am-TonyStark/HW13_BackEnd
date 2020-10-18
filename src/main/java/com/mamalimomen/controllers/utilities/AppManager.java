@@ -14,7 +14,7 @@ import java.util.*;
 
 public final class AppManager {
     private static final List<EntityManager> emList = new ArrayList<>();
-    private static final Map<Services, BaseService<? extends Long, ? extends BaseEntity, ? extends BaseDTO<? extends Number>>> serviceMapper = new HashMap<>();
+    private static final Map<Services, BaseService<? extends Long, ? extends BaseEntity, ? extends BaseDTO>> serviceMapper = new HashMap<>();
     private static ServerManager serverManager;
     private static final Scanner sc = new Scanner(System.in);
 
@@ -39,7 +39,7 @@ public final class AppManager {
         }
     }
 
-    public static <PK extends Long, E extends BaseEntity, D extends BaseDTO<Long>, S extends BaseService<PK, E, D>> S getService(Services service) {
+    public static <PK extends Long, E extends BaseEntity, D extends BaseDTO, S extends BaseService<PK, E, D>> S getService(Services service) {
         return (S) serviceMapper.get(service);
     }
 

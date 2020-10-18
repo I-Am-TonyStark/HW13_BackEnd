@@ -16,7 +16,7 @@ import java.util.Date;
                 query = "SELECT p FROM Post p"),
         @NamedQuery(
                 name = "Post.findManyByAccountUsername",
-                query = "SELECT p FROM Post p JOIN p.account a WHERE a.user.username = ?1 ORDER BY p.insertDate ASC"),
+                query = "SELECT p FROM Post p JOIN p.account a WHERE a.user.username = ?1 AND a.deleted = FALSE ORDER BY p.insertDate ASC"),
         @NamedQuery(
                 name = "Post.findFetchManyByAccountUsernameLike",
                 query = "SELECT p FROM Post p JOIN FETCH p.account a WHERE a.user.username like ?1")
